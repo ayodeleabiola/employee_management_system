@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Employee List</h1>
+        <table border="1">
+            <thead>
+            <tr>
+                <th scope="col">Employee FirstName</th>
+                <th scope="col">Employee LastName</th>
+                <th scope="col">Employee Email</th>
+                <th scope="col">Employee dob</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="employee: ${employees}">
+                <td th:text="${employee.firstname}"></td>
+                <td th:text="${employee.lastname}"></td>
+                <td th:text="${employee.email}"></td>
+                <td th:text="${employee.dob}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/home}">Home Page</a>
+    </div>
+</body>
+</html>
