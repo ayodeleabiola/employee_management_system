@@ -3,14 +3,19 @@ package com.springboot_backend.springboot_backend_thymeleaf.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
+/**
+ Look into the Lombok Library/Dependency and start using it!
+ */
+
 @Entity
 @Table(name="Employee")
 public class Employee {
 
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-@Id
-Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    private Long id;
     @Column(name= "firstname")
+    // TODO: use camel case for attribute naming -> "firstName"
     private String firstname;
     @Column(name= "lastname")
     private String lastname;
@@ -22,8 +27,8 @@ Long id;
 
 
     public Employee() {
-
     }
+
     public Employee(String firstname, String lastname, String email, String dob) {
         this.firstname = firstname;
         this.lastname = lastname;
